@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
 
+print("working!")
+
 URL = "https://edumaidenvoyage.com/wp_mock/dispWp_mockSessionDetail?session_srl=78414"
 
 browser = webdriver.Chrome()
