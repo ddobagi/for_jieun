@@ -5,6 +5,10 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 
+app.get('/run-selenium', (req, res) => {
+    res.send("working ✅ 서버 잘 살아있습니다!");
+  });  
+
 app.post('/run-selenium', (req, res) => {
   exec('python script.py', (error, stdout, stderr) => {
     if (error) {
