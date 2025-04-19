@@ -10,7 +10,10 @@ options.add_argument('--disable-dev-shm-usage')
 user_data_dir = tempfile.mkdtemp()
 options.add_argument(f'--user-data-dir={user_data_dir}')
 
-driver = webdriver.Chrome(options=options)
+try:
+    driver = webdriver.Chrome(options=options)
+except:
+    print("get 실행 실패")
 
 try:
     print("🔍 접속 시도 중...")
