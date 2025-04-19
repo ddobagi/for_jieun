@@ -7,11 +7,8 @@ import time
 
 URL = "https://edumaidenvoyage.com/wp_mock/dispWp_mockSessionDetail?session_srl=78414"
 
-try:
-    browser = webdriver.Chrome()
-    browser.get(URL)
-except Exception as e:
-    print("❗페이지 로딩 중 에러 발생:", str(e))
+browser = webdriver.Chrome()
+browser.get(URL)
 
 flag = True
 
