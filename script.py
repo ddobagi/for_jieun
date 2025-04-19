@@ -16,5 +16,4 @@ try:
 except:
     print("get 실행 실패")
 finally:
-    driver.quit()
     shutil.rmtree(user_data_dir)
