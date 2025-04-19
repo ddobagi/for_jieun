@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Run Selenium</title>
+</head>
+<body>
+  <h1>💻 Render + Selenium 실행</h1>
+
+  <button onclick="runPython()">Selenium 실행</button>
+
+  <script>
+    function runPython() {
+      fetch('/run-selenium', {
+        method: 'POST'
+      })
+      .then(res => res.text())
+      .then(msg => alert("응답: " + msg))
+      .catch(err => alert("에러: " + err));
+    }
+  </script>
+</body>
+</html>

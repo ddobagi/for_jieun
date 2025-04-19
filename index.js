@@ -1,9 +1,18 @@
 const express = require('express');
 const { exec } = require('child_process');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+// 📌 정적 파일 서빙
+app.use(express.static(path.join(__dirname)));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 
 app.get('/run-selenium', (req, res) => {
     res.send("working ✅ 서버 잘 살아있습니다!");
