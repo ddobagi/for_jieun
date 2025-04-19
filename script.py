@@ -16,7 +16,6 @@ try:
 except:
     print("get 실행 실패")
 finally:
-    browser.quit()
     shutil.rmtree(user_data_dir)
 
 ## 이것조차도 조금 pending이 걸리네. 완전 막히는게 아니고 로딩 개념이구나
