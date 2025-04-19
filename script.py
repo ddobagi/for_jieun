@@ -5,9 +5,26 @@ import time
 
 
 
+from selenium.webdriver.chrome.options import Options
+import tempfile
+
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+
+# ✅ 임시 유저 디렉토리 생성
+temp_dir = tempfile.mkdtemp()
+options.add_argument(f'--user-data-dir={temp_dir}')
+
+
+
+
+
+
 URL = "https://edumaidenvoyage.com/wp_mock/dispWp_mockSessionDetail?session_srl=78414"
 
-browser = webdriver.Chrome()
+browser = webdriver.Chrome(options=options)
 browser.get(URL)
 
 flag = True
