@@ -1,0 +1,9 @@
+ services:
+  - type: web
+    name: selenium-on-render
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: "python script.py"
+
