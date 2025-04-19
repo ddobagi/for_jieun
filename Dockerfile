@@ -1,6 +1,5 @@
- FROM python:3.10-slim
+FROM python:3.10-slim
 
-# 필수 시스템 패키지 설치
 RUN apt-get update && apt-get install -y \
     chromium \
     chromium-driver \
@@ -23,17 +22,14 @@ RUN apt-get update && apt-get install -y \
     xdg-utils \
     && apt-get clean
 
-# Chrome 경로 환경변수
 ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROMEDRIVER=/usr/bin/chromedriver
 
-# Python 패키지 설치
 RUN pip install selenium
 
-# 작업 디렉토리 설정
 WORKDIR /app
-COPY script.py .
+COPY . .
 
-# 실행 명령
-CMD ["python", "script.py"]
+CMD ["node", "index.js"]
+
 
