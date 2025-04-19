@@ -4,20 +4,11 @@ from selenium.common.exceptions import NoSuchElementException
 import time
 
 
-from selenium.webdriver.chrome.options import Options
-
-options = Options()
-options.add_argument('--headless')        # 창 없이 실행
-options.add_argument('--disable-gpu')     # GPU 비활성화
-options.add_argument('--no-sandbox')      # 리눅스 서버에 필요
-options.add_argument('--disable-dev-shm-usage')  # 메모리 문제 방지
-
-
 
 URL = "https://edumaidenvoyage.com/wp_mock/dispWp_mockSessionDetail?session_srl=78414"
 
 try:
-    browser = webdriver.Chrome(options=options)
+    browser = webdriver.Chrome()
     browser.get(URL)
 except Exception as e:
     print("❗페이지 로딩 중 에러 발생:", str(e))
