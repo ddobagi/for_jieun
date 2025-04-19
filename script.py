@@ -13,6 +13,7 @@ options.add_argument(f'--user-data-dir={user_data_dir}')
 print("여기까지는 옴")
 try:
     browser = webdriver.Chrome(options=options)
+    print("브라우저 표시도 성공, 안보일 뿐")
 except:
     print("get 실행 실패")
 finally:
