@@ -2,10 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import tempfile, shutil
 
+import os
+
 options = Options()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
+
+if os.environ.get("ENV") != "LOCAL":
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
 
 user_data_dir = tempfile.mkdtemp()
 options.add_argument(f'--user-data-dir={user_data_dir}')
