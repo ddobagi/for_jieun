@@ -10,6 +10,7 @@ options.add_argument('--disable-dev-shm-usage')
 user_data_dir = tempfile.mkdtemp()
 options.add_argument(f'--user-data-dir={user_data_dir}')
 
+print("여기까지는 옴옴")
 try:
     driver = webdriver.Chrome(options=options)
 except:
