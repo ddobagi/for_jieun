@@ -12,7 +12,7 @@ options.add_argument(f'--user-data-dir={user_data_dir}')
 
 print("여기까지는 옴")
 try:
-    driver = webdriver.Chrome(options=options)
+    print("try문 들어옴")
 except:
     print("get 실행 실패")
 finally:
